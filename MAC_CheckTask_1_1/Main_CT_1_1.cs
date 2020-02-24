@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MAC_CheckTask_1_1
 {
-    class Program
+    class Main_CT_1_1
     {
         static void Main(string[] args)
         {
