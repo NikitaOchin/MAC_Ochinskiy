@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MAC_DLL", "MAC_DLL\MAC_DLL.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MAC_LabWork_1_1", "MAC_LabWork_1_1\MAC_LabWork_1_1.csproj", "{02E18BD9-0086-47E3-AF3A-151F1462CA87}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MAC_CheckTask_1_1", "MAC_CheckTask_1_1\MAC_CheckTask_1_1.csproj", "{4B5DB239-7052-4AF7-9053-5D9F0E79D6EF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{02E18BD9-0086-47E3-AF3A-151F1462CA87}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{02E18BD9-0086-47E3-AF3A-151F1462CA87}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{02E18BD9-0086-47E3-AF3A-151F1462CA87}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4B5DB239-7052-4AF7-9053-5D9F0E79D6EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B5DB239-7052-4AF7-9053-5D9F0E79D6EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B5DB239-7052-4AF7-9053-5D9F0E79D6EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B5DB239-7052-4AF7-9053-5D9F0E79D6EF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

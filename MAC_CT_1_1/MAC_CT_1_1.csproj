@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{4B5DB239-7052-4AF7-9053-5D9F0E79D6EF}</ProjectGuid>
+    <ProjectGuid>{BB2573DE-5C14-42CC-B18C-3FD600247B35}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>MAC_CheckTask_1_1</RootNamespace>
-    <AssemblyName>MAC_CheckTask_1_1</AssemblyName>
+    <RootNamespace>MAC_CT_1_1</RootNamespace>
+    <AssemblyName>MAC_CT_1_1</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,17 +43,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Main_CT_1_1.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\MAC_DLL\MAC_DLL.csproj">
-      <Project>{3839d9fd-af06-433e-8611-08892e60227a}</Project>
-      <Name>MAC_DLL</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
