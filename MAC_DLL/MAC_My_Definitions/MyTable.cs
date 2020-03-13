@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MAC_DLL.MAC_My_Definitions
 {
-    public class MyTable
+    public abstract class MyTable
     {
         #region <---Key features MyTable--->
 
@@ -24,7 +24,7 @@ namespace MAC_DLL.MAC_My_Definitions
         public Point_xf Minimum { get; protected set; }
 
         //Returns the lenght of function definition area
-        public double Region_x { get { return Points[Lenght - 1].X - Points[0].X}; }
+        public double Region_x { get { return Points[Length - 1].X - Points[0].X; } }
 
         //Returns the lenght of function value range
         public double Region_f { get { return Maximum.F - Minimum.F; } }
@@ -33,7 +33,7 @@ namespace MAC_DLL.MAC_My_Definitions
         public double Epsilon { get; set; }
 
         //Title of table
-        public double Title { get; protected set; }
+        public string Title { get; protected set; }
 
         #endregion <---Key features MyTable--->
 
@@ -100,6 +100,8 @@ namespace MAC_DLL.MAC_My_Definitions
         }
 
         #endregion <---basic methods MyTable--->
+
+
 
     }
 }

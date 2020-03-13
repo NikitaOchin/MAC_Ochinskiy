@@ -4,16 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3839D9FD-AF06-433E-8611-08892E60227A}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MAC_DLL</RootNamespace>
-    <AssemblyName>MAC_DLL</AssemblyName>
+    <ProjectGuid>{57A6F6CC-1068-46B2-BF7E-DDFBE1C0D35D}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>MAC_LabWork_1_3</RootNamespace>
+    <AssemblyName>MAC_LabWork_1_3</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,6 +24,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -41,12 +43,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MAC_My_Definitions\MaTableOfData.cs" />
-    <Compile Include="MAC_My_Definitions\MyTable.cs" />
-    <Compile Include="MAC_My_Definitions\Point_xf.cs" />
-    <Compile Include="MAC_My_Functions.cs" />
-    <Compile Include="MAC_Series.cs" />
+    <Compile Include="Main_LW_1_3.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MAC_DLL\MAC_DLL.csproj">
+      <Project>{3839d9fd-af06-433e-8611-08892e60227a}</Project>
+      <Name>MAC_DLL</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
