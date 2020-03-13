@@ -8,6 +8,38 @@ namespace MAC_DLL
 {
     public class MAC_My_Functions
     {
+        public static double f0(double x, double a, double b, double eps)
+        {
+            if (x == 0) return 0.0;
+            double xz = 11.0 * x / 7.0, bx = b * x;
+            double Ao = (Math.Cos(bx) + Math.Sin(bx/a)) / a;
+            double pk = 1.0, Ak = 1.0, Summa = 0.0;
+
+            for(int k = 1; Math.Abs(Ak) > eps; k++)
+            {
+                pk = -pk * xz / (k + 1.0);
+                Ak = (Math.Cos(bx / (k + 1.0)) + Math.Sin(bx / (k + a))) * pk / (2.0 * k + a);
+                Summa += Ak;
+            }
+            return 0.25 * xz * (Ao + Summa);
+        }
+
+        public static double f2(double x, double a, double b, double eps)
+        {
+            if (x == 0) return 0.0;
+            double Ao = Math.Cos(Math.PI * a * x * x / 2.0) / b;
+            double pk = x, Ak = 1.0, Summa = 0.0;
+
+            for (int k = 1; Math.Abs(Ak) > eps; k++)
+            {
+                pk = -pk * x * x / (2 * k) / (2 * k + 1.0);
+                Ak = Math.Cos(Math.PI / 2.0 * a * x * x / (k * x + 1.0))
+                    * pk / (2.0 * k + b);
+                Summa += Ak;
+            }
+            return Ao * x + Summa;
+        }
+
         public static double MySin(double x, double eps)
         {
             if (x == 0) return 0.0;
