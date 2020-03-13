@@ -101,7 +101,5 @@ namespace MAC_DLL.MAC_My_Definitions
 
         #endregion <---basic methods MyTable--->
 
-
-
     }
 }
