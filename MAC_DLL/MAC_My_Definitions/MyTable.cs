@@ -72,12 +72,13 @@ namespace MAC_DLL.MAC_My_Definitions
 
             txt += $"\r\n f_Reg = {Region_f,18:F12}\r\n";
 
-            return txt;
+            return txt + Table_of_Roots("");
         }
 
-        //Method for keep table in text file path with addiction comment
-        public virtual void To_txt_File(string path = "My_Table.txt", string comment = "")
+        //Method for keep table in a text file path with addiction comment
+        public virtual void To_txt_File(string path, string comment)
         {
+            if (path == "") path = "My_Table.txt";
             FileInfo file = new FileInfo(path);
             if (file.Exists) file.Delete();
             StreamWriter sw = new StreamWriter(file.OpenWrite());
@@ -100,6 +101,42 @@ namespace MAC_DLL.MAC_My_Definitions
         }
 
         #endregion <---basic methods MyTable--->
+
+        #region <---additional features MyTable--->
+
+        public List<Root> Roots { get; internal set; }
+
+        #endregion <---additional features MyTable--->
+
+        #region <---additional methods MyTable--->
+
+        protected void Roots_Location()
+        {
+            int counter = 0;
+            for (int i = 1; i < Length; i++)
+            {
+                if (Points[i - 1].F * Points[i].F < 0)
+                {
+                    counter++;
+                    if (counter == 1) Roots = new List<Root>();
+                    Roots.Add(new Root(Points[i - 1].X, Points[i].X));
+                }
+            }
+        }
+        public string Table_of_Roots(string comment)
+        {
+            string table = comment + "\r\n";
+            if (Roots != null)
+            {
+                table += " Table of zeros of function " + Title + " : \r\n";
+                for (int j = 0; j < Roots.Count; j++)
+                    table += $"{j,3}" + Roots[j].ToPrint() + "\r\n";
+            }
+            else table += " Table of zeros of function " + Title + " is empty!\r\n";
+            return table;
+        }
+        #endregion <---additional methods MyTable--->
+
 
     }
 }

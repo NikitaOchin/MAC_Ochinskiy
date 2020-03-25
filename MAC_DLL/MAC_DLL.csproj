@@ -43,7 +43,9 @@
   <ItemGroup>
     <Compile Include="MAC_My_Definitions\MaTableOfData.cs" />
     <Compile Include="MAC_My_Definitions\MyTable.cs" />
+    <Compile Include="MAC_My_Definitions\MyTableOfFunction.cs" />
     <Compile Include="MAC_My_Definitions\Point_xf.cs" />
+    <Compile Include="MAC_My_Definitions\Root.cs" />
     <Compile Include="MAC_My_Functions.cs" />
     <Compile Include="MAC_Series.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -30,6 +30,8 @@ namespace MAC_LabWork_1_3
             txt = $"\r\n\r\n\r\n Count of rows: {T2.Length,0}";
             txt += T1.ToPrint("  *.txts file processing ");
             Console.WriteLine(txt);
+
+            T2.To_txt_File("Test_LW_1_3.txt", "New result's form");
         }
     }
 }

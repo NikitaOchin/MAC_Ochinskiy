@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MAC_CheckTask_1_2", "MAC_Ch
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MAC_LabWork_1_3", "MAC_LabWork_1_3\MAC_LabWork_1_3.csproj", "{57A6F6CC-1068-46B2-BF7E-DDFBE1C0D35D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MAC_CheckTask_1_3", "MAC_CheckTask_1_3\MAC_CheckTask_1_3.csproj", "{BBFCD3DF-0BAB-4AB0-8C42-3CF232121763}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{57A6F6CC-1068-46B2-BF7E-DDFBE1C0D35D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{57A6F6CC-1068-46B2-BF7E-DDFBE1C0D35D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{57A6F6CC-1068-46B2-BF7E-DDFBE1C0D35D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BBFCD3DF-0BAB-4AB0-8C42-3CF232121763}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BBFCD3DF-0BAB-4AB0-8C42-3CF232121763}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BBFCD3DF-0BAB-4AB0-8C42-3CF232121763}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BBFCD3DF-0BAB-4AB0-8C42-3CF232121763}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

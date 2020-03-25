@@ -87,6 +87,7 @@ namespace MAC_DLL.MAC_My_Definitions
             Title = title;
             #endregion <---Data table generation--->
 
+            Roots_Location();
         }
 
         #region <---Override MyTable class methods--->
