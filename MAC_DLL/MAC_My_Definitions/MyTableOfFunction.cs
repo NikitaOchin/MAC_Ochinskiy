@@ -28,9 +28,24 @@ namespace MAC_DLL.MAC_My_Definitions
             Roots_Location();
         }
 
+        #region<---Ovverride methods MyTable class--->
         public override string ToPrint(string comment)
         {
             return comment + "\r\n" + Table_of_Function();
         }
+        #endregion<---Ovverride methods MyTable class--->
+
+        #region<---Function table processing methods--->
+
+        public override void Roots_correction(double eps)
+        {
+            if (Roots != null)
+                foreach (Root root in Roots)
+                    MAC_Equations.Dichotomy(Fx, root, eps);
+        }
+
+        #endregion<---Function table processing methods--->
+
+
     }
 }

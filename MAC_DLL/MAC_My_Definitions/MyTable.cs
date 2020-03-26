@@ -110,6 +110,7 @@ namespace MAC_DLL.MAC_My_Definitions
 
         #region <---additional methods MyTable--->
 
+        public virtual void Roots_correction(double eps) { }
         protected void Roots_Location()
         {
             int counter = 0;
@@ -135,6 +136,7 @@ namespace MAC_DLL.MAC_My_Definitions
             else table += " Table of zeros of function " + Title + " is empty!\r\n";
             return table;
         }
+        
         #endregion <---additional methods MyTable--->
 
 
