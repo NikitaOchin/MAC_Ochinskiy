@@ -38,8 +38,8 @@ namespace MAC_CheckTask_1_3
             Console.WriteLine("\r\nHome");
             MyTF Home_TF = new MyTF(1.5, 4.3, 140, home_dummy_fx, "home_dummy f(x)");
             Console.WriteLine("Count root of function on interval: " + Home_TF.Roots.Count() + "\r\n");
-            Console.WriteLine("Maximum: \r\n" + $"{Home_TF.Maximum.F:F10}" + "\r\nMinimum: \r\n" + $"{Home_TF.Minimum.F:F10}");
-            Console.WriteLine("F(E1): \r\n" + $"{home_dummy_fx(E1):F10}" + "\r\nF(E2): \r\n" + $"{home_dummy_fx(E2):F10}");
+            Console.WriteLine("Maximum: \r\n" + $"{Home_TF.Maximum.F:F9}" + "\r\nMinimum: \r\n" + $"{Home_TF.Minimum.F:F9}");
+            Console.WriteLine("F(E1): \r\n" + $"{home_dummy_fx(E1):F9}" + "\r\nF(E2): \r\n" + $"{home_dummy_fx(E2):F9}");
             Console.WriteLine("\r\nУТОЧНИ КОЛ-ВО ЗНАКОВ ПОСЛЕ ЗАПЯТОЙ!\r\n");
 
         }

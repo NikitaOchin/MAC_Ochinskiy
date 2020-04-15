@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{57A6F6CC-1068-46B2-BF7E-DDFBE1C0D35D}</ProjectGuid>
+    <ProjectGuid>{D2317D7C-947B-4202-A030-A2C2D856610A}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>MAC_LabWork_1_3</RootNamespace>
-    <AssemblyName>MAC_LabWork_1_3</AssemblyName>
+    <RootNamespace>MAC_LabWork_1_5</RootNamespace>
+    <AssemblyName>MAC_LabWork_1_5</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,7 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Main_LW_1_3.cs" />
+    <Compile Include="Main_LW_1_5.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

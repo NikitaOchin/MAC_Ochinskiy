@@ -18,7 +18,7 @@ namespace MAC_LabWork_1_3
 
             //MyTD T2 = new MyTD("MAC_LabWork_1_3_2020_3k_113_v00.txt", "txt file");
             //txt = $"\r\n\r\n\r\n Count of rows: {T2.Length,0}";
-            //txt += T1.ToPrint("  *.txts file processing ");
+            //txt += T2.ToPrint("  *.txts file processing ");
             //Console.WriteLine(txt);
 
             MyTD T1 = new MyTD("MAC_LabWork_1_3_2020_3k_113_v02.bin", "binary file");
@@ -28,10 +28,12 @@ namespace MAC_LabWork_1_3
 
             MyTD T2 = new MyTD("MAC_LabWork_1_3_2020_3k_113_v02.txt", "txt file");
             txt = $"\r\n\r\n\r\n Count of rows: {T2.Length,0}";
-            txt += T1.ToPrint("  *.txts file processing ");
+            txt += T2.ToPrint("  *.txts file processing ");
             Console.WriteLine(txt);
 
-            T2.To_txt_File("Test_LW_1_3.txt", "New result's form");
+            T1.To_txt_File("Test_LW_1_3_bin.txt", "New result's form");
+
+            T2.To_txt_File("Test_LW_1_3_txt.txt", "New result's form");
         }
     }
 }

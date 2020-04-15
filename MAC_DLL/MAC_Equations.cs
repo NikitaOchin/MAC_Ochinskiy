@@ -9,8 +9,7 @@ namespace MAC_DLL
 {
     public class MAC_Equations
     {
-        public static double Dichotomy
-            (double a, double b, double eps, Func<double,double> f, ref int K)
+        public static double Dichotomy(double a, double b, double eps, Func<double, double> f, ref int K)
         {
             double fa = f(a), fc, c = 0.0; K = 0;
             while (K < 70)
@@ -23,8 +22,7 @@ namespace MAC_DLL
             return c;
         }
 
-        public static void Dichotomy
-            (Func<double, double> f, Root root, double eps)
+        public static void Dichotomy(Func<double, double> f, Root root, double eps)
         {
             double a = root.XL, c = 0.0, b = root.XR, fa = f(a), fc;
             root.Iters = 0; root.Err = eps;
@@ -37,5 +35,35 @@ namespace MAC_DLL
             }
             root.X = c;
         }
+
+        public static double Tangent(Func<double, double> Fx,
+                                     Func<double, double> D1Fx,
+                                     Func<double, double> D2Fx,
+                                     double xL, double xR,
+                                     double eps, out int K)
+        {
+            double xK = (xR + xL) * 0.5; K = 0;
+            if ((Fx(xL) * D2Fx(xL)) > 0) xK = xL;
+            if (Fx(xR) * D2Fx(xR) > 0) xK = xR;
+            while (Math.Abs(Fx(xK)) > eps && K <= 15)
+            {
+                xK = xK - Fx(xK) / D1Fx(xK); K++;
+            }
+            return xK;
+        }
+
+        public static double Tangent(Func<double, double> Fx,
+                                    double xL, double xR,
+                                    double eps, out int K)
+        {
+            double xK = (xR + xL) * 0.5; K = 0;
+            double dF = (Fx(xR) - Fx(xL)) / (xR - xL);
+            while (Math.Abs(Fx(xK)) > eps && K <= 25)
+            {
+                xK = xK - Fx(xK) / dF; K++;
+            }
+            return xK;
+        }
+
     }
 }

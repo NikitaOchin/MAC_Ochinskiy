@@ -19,13 +19,13 @@ namespace MAC_CheckTask_1_2
             
             a = 0.50; b = 1.50; x1 = 2.50; x2 = 3.20;
             Console.WriteLine("Test Value f2");
-            Console.WriteLine($"f({x1,3:F1}) = {MyF.f2(x1, a, b, eps),13:F10}");
-            Console.WriteLine($"f({x2,3:F1}) = {MyF.f2(x2, a, b, eps),13:F10}");
+            Console.WriteLine($"f({x1,3:F2}) = {MyF.f2(x1, a, b, eps),13:F10}");
+            Console.WriteLine($"f({x2,3:F2}) = {MyF.f2(x2, a, b, eps),13:F10}");
 
             a = 0.87; b = 1.33; x1 = 2.36; x2 = 3.71;
             Console.WriteLine("\r\nMy Value f2");
-            Console.WriteLine($"f({x1,3:F1}) = {MyF.f2(x1, a, b, eps),13:F10}");
-            Console.WriteLine($"f({x2,3:F1}) = {MyF.f2(x2, a, b, eps),13:F10}");
+            Console.WriteLine($"f({x1,3:F2}) = {MyF.f2(x1, a, b, eps),13:F9}");
+            Console.WriteLine($"f({x2,3:F2}) = {MyF.f2(x2, a, b, eps),13:F9}");
 
         }
     }

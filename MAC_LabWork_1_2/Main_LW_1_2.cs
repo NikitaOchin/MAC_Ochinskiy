@@ -15,12 +15,14 @@ namespace MAC_LabWork_1_2
         {
             //Console.WriteLine(TestMySinCos());
             //Console.WriteLine(TestMySinhCosh());
-            //Console.WriteLine($"{Math.Log(MyF.MyExp(-10.3,1.0E-20)),36:F22}");
+            //Console.WriteLine($"{Math.Log(MyF.MyExp(-10.3, 1.0E-20)),36:F22}");
 
-            //A = 15.0; B = 17.0; C = -11.0; e = 1.0E-20;
-            //A = 1.50; B = 1.70; C = -1.10; e = 1.0E-20;
-            //Console.WriteLine(Test_DLL());
-            //Console.WriteLine(Test_Math());
+            A = 15.0; B = 17.0; C = -11.0; e = 1.0E-20;
+            A = 1.50; B = 1.70; C = -1.10; e = 1.0E-20;
+            Console.WriteLine(Test_DLL());
+            Console.WriteLine(Test_Math());
+
+            Console.WriteLine(" \r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n  HOMEWORK");
             A = 12.30; B = 22.40; e = 1.0E-20;
             Console.WriteLine($"Test 1 A = 12.30 B = 22.40 \r\n{Test_DLL_Home()}");
             Console.WriteLine(Test_Math_Home());
