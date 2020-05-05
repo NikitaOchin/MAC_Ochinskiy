@@ -16,7 +16,7 @@ namespace MAC_DLL.MAC_My_Definitions
         }
         public string ToPrint()
         {
-            return $"  [{XL,10:F5},{XR,10:F5} ] Root = {X,16:F10}" +
+            return $"  [{XL,10:F5},{XR,10:F5} ] Root = {X,16:F12}" +
                    $"  Err ={Err,10:E1} Iters = {Iters}";
         }
     }

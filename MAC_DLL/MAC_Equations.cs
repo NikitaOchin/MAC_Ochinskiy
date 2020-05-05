@@ -65,5 +65,21 @@ namespace MAC_DLL
             return xK;
         }
 
+        public static void Tangent(Func<double, double> Fx,
+                                     Func<double, double> D1Fx,
+                                     Func<double, double> D2Fx,
+                                     Root root, double eps)
+        {
+            root.X = (root.XR + root.XL) * 0.5; root.Iters = 0;
+            if ((Fx(root.XL) * D2Fx(root.XL)) > 0) root.X = root.XL;
+            if (Fx(root.XR) * D2Fx(root.XR) > 0) root.X = root.XR;
+
+            while (Math.Abs(Fx(root.X)) > eps && root.Iters <= 15)
+            {
+                root.X = root.X - Fx(root.X) / D1Fx(root.X); root.Iters++;
+            }
+            root.Err = Math.Abs(Fx(root.X));
+        }
+
     }
 }
