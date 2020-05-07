@@ -117,6 +117,45 @@ namespace MAC_DLL
             int N = x.Size; double error = 0.0; Vector bc = Vector.Multiply(A, x);
             for (int i = 1; i <= N; i++) error += (b[i] - bc[i]) * (b[i] - bc[i]);
             return Math.Sqrt(error) / N;
-        } 
+        }
+
+        public static Vector Method_Zeidela(Matrix A, Vector b, double eps, out int k)
+        {
+            int N = A.Size, i, j;
+
+            Matrix AT = Matrix.Transpose(A);
+            Matrix C = AT * A;
+            Vector d = Vector.Multiply(AT, b);
+
+            Matrix alpha = new Matrix(N);
+            Vector betta = new Vector(N);
+            for (i = 1; i <= N; i++)
+                for (j = 1; j <= N; j++)
+                    if (i != j) alpha[i, j] = -C[i, j] / C[i, i];
+                    else alpha[i, i] = 0.0;
+            Vector X = new Vector(N);
+            for(i = 1; i <= N; i++)
+            {
+                betta[i] = d[i] / C[i, i]; X[i] = betta[i];
+            }
+
+            Vector X1 = new Vector(N); double summa, error; k = 0;
+            do
+            {
+                for (i = 1; i <= N; i++)
+                {
+                    summa = betta[i];
+                    for (j = 1; j <= i; j++) summa += X1[j] * alpha[i, j];
+                    for (j = i; j <= N; j++) summa += X[j] * alpha[i, j];
+                    X1[i] = summa;
+                }
+                error = 0.0; k++;
+                for (i = 1; i <= N; i++)
+                {
+                    error = Math.Max(error, Math.Abs(X1[i] - X[i])); X[i] = X1[i];
+                }
+                if (error < eps) return X; if (k > 10000) return null;
+            } while (true);
+        }
     }
 }
