@@ -12,7 +12,8 @@ namespace MAC_DLL.MAC_My_Definitions
         #region <---Key features MyTable--->
 
         //An array of nodes (x,f) in this table
-        protected Point_xf[] Points { get; set; }
+        //protected Point_xf[] Points { get; set; }
+        public Point_xf[] Points { get; set; }
 
         //Returns count of nodes in this table
         public int Length { get { if (Points == null) return 0; else return Points.Length; } }

@@ -157,5 +157,45 @@ namespace MAC_DLL
                 if (error < eps) return X; if (k > 10000) return null;
             } while (true);
         }
+
+        public static Vector Method_Simple_Iteration(Matrix A, Vector b, double eps, out int k)
+        {
+            int N = A.Size, i, j;
+            Vector X = Vector.Copy(b);
+            Vector X1 = new Vector(N); double error; k = 0;
+            do
+            {
+                X1 = new Vector(N);
+                for (i = 1; i <= N; i++)
+                {
+                    for (j = 1; j <= N; j++)
+                        X1[i] += ((i == j ? 1 : 0) - A[i, j]) * X[j];
+                    X1[i] += b[i];
+                }
+                error = 0.0; k++;
+                for (i = 1; i <= N; i++)
+                {
+                    error = Math.Max(error, Math.Abs(X1[i] - X[i])); X[i] = X1[i];
+                }
+                if (error < eps) return X; if (k > 10000) return null;
+            } while (true);
+        }
+
+        public static Vector Method_Kramera(Matrix A, Vector b, out Vector Dk)
+        {
+            if (double.IsNaN(A.Det)) Matrix.Determinant_J(A);
+            Matrix a; int N = A.Size;
+            Vector X = new Vector(N); Dk = new Vector(N);
+            for (int k = 1; k <= N; k++)
+            {
+                a = Matrix.Copy(A);
+                for (int j = 1; j <= N; j++)
+                    a[j, k] = b[j];
+
+                Dk[k] = Matrix.Determinant(a, k, false);
+                X[k] = Dk[k] / A.Det;
+            }
+            return X;
+        }
     }
 }

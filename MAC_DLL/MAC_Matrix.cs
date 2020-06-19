@@ -473,10 +473,57 @@ namespace MAC_DLL
       }
       if (double.IsNaN(A.Det)) A.Det = det;
       return det;
-    }
-
+     }
     #endregion <--- Розкладання Матриць та Детермінанти --->
-  }
+        
+        #region    <--- Приєднана та зворотня матриці --->
+        // Метод, який обчислює Приеднану Матрицю
+        public static Matrix Attached(Matrix A)
+        {
+            int N = A.Size; Matrix Az = new Matrix(N);
+            for (int i = 1; i <= N; i++)
+                for (int j = 1; j <= N; j++) Az[j, i] = Cofactor(A, i, j);
+            return Az;
+        }
+
+        // Метод, який обчислює зворотню Матрицю через Приєднану
+        public static Matrix Inversion_1(Matrix A, out double error)
+        {
+            if (double.IsNaN(A.Det)) Determinant_I(A);
+            double det = 1.0 / A.Det;
+            Matrix Az = Attached(A) * det; error = Error_of_Inversion(Az, A);
+            return Az;
+        }
+
+        // Метод, який обчислює зворотню Матрицю через Приєднану
+        public static Matrix Inversion_2(Matrix A, out double error)
+        {
+            Vector x, b; int N = A.Size; Matrix Az = new Matrix(N);
+            for(int k = 1; k <= N; k++)
+            {
+                b = new Vector(N);b[k] = 1.0;
+                x = MAC_Algebra.Method_Gaussa(A, b);
+                for (int i = 1; i <= N; i++) Az[i, k] = x[i];
+            }
+            error = Error_of_Inversion(Az, A);
+            return Az;
+        }
+
+        // Метод, який обчислює помилку зворотньої матриці
+        public static double Error_of_Inversion(Matrix Az, Matrix A)
+        {
+            int N = Az.Size; double error = -10.0; Matrix E = Az * A;
+            for (int i = 1; i <= N; i++)
+                for (int j = 1; j <= N; j++)
+                {
+                    if (i == j) error = Math.Max(error, Math.Abs(E[i, i] - 1.0));
+                    else error = Math.Max(error, Math.Abs(E[i,j]));
+                }
+            return error;
+        }
+        #endregion    <--- Приєднана та зворотня матриці --->
+
+    }
 }
 
 

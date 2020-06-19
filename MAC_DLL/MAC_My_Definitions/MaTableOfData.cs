@@ -12,6 +12,28 @@ namespace MAC_DLL.MAC_My_Definitions
     {
         public string Table_in_File { get; }
 
+        /// <summary>
+        /// Степінь інтерполяційного многочлена
+        /// </summary>
+        private int Power;
+        public int power
+        {
+            get { return Power; }
+            set
+            {
+                Power = value;
+                if (value < 1) Power = 1;
+                if (value >= Length) Power = Length - 1;
+            }
+        }
+
+        /// <summary>
+        /// Тип інтерполяційного многочлена при апроксимації таблиці
+        /// </summary>
+        public TypeOfInterpolation TypeInt { get; set; }
+            = TypeOfInterpolation.ByLagrange;
+        
+        // <--- Constructor --->
         public MyTableOfData(string path,string title)
         {
             List<Point_xf> Temp = new List<Point_xf>();
@@ -91,6 +113,24 @@ namespace MAC_DLL.MAC_My_Definitions
         }
 
         #region <---Override MyTable class methods--->
+
+        public override void Roots_correction(double eps)
+        {
+            if (Roots != null)
+                foreach (Root root in Roots)
+                    MAC_Equations.Dichotomy(PLn, root, eps);
+        }
+
+        double PLn(double xz)
+        {
+            switch (TypeInt)
+            {
+                case TypeOfInterpolation.ByLagrange:
+                    return MAC_Interpolation.Polynomial_Lagrange(Power, xz, Points);
+
+                default: return double.NaN;
+            }
+        }
 
         public override string ToPrint(string comment)
         {
