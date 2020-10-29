@@ -4,16 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3839D9FD-AF06-433E-8611-08892E60227A}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MAC_DLL</RootNamespace>
-    <AssemblyName>MAC_DLL</AssemblyName>
+    <ProjectGuid>{C29EDBE2-BFC3-47FE-AB82-DEF866A04847}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>MAC_L_W_5_2_Step2</RootNamespace>
+    <AssemblyName>MAC_L_W_5_2_Step2</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,6 +24,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -37,27 +39,45 @@
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MAC_Algebra.cs" />
-    <Compile Include="MAC_Equations.cs" />
-    <Compile Include="MAC_Interpolation.cs" />
-    <Compile Include="MAC_Matrix.cs" />
-    <Compile Include="MAC_My_Definitions\MyExtendedTableOfFunction.cs" />
-    <Compile Include="MAC_My_Definitions\MaTableOfData.cs" />
-    <Compile Include="MAC_My_Definitions\MyTable.cs" />
-    <Compile Include="MAC_My_Definitions\MyTableOfFunction.cs" />
-    <Compile Include="MAC_My_Definitions\Point_xf.cs" />
-    <Compile Include="MAC_My_Definitions\Root.cs" />
-    <Compile Include="MAC_My_Definitions\TypeOfInterpolation.cs" />
-    <Compile Include="MAC_My_Functions.cs" />
-    <Compile Include="MAC_Newton_Cotes.cs" />
-    <Compile Include="MAC_Quadrature.cs" />
-    <Compile Include="MAC_Series.cs" />
-    <Compile Include="MAC_Vector.cs" />
+    <Compile Include="LW_5_2_Step2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LW_5_2_Step2.Designer.cs">
+      <DependentUpon>LW_5_2_Step2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="LW_5_2_Step2.resx">
+      <DependentUpon>LW_5_2_Step2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
