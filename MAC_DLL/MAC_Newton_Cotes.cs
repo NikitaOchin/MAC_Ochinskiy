@@ -70,7 +70,7 @@ namespace MAC_DLL
             do
             {
                 I0 = I1; I1 = 0.0; m++; hm = (b - a) / m;
-                for(j = 0; j <= n; j++)
+                for(j = 0; j < m; j++)
                 {
                     aj = a + j * hm; bj = aj + hm; I1 += Summa(aj, bj, f);
                 }

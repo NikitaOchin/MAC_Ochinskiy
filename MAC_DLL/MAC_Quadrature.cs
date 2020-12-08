@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MAC_DDL
+namespace MAC_DLL
 {
     public class MAC_Quadrature
     {

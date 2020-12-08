@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using CLQ = MAC_DDL.MAC_Quadrature;
+using CLQ = MAC_DLL.MAC_Quadrature;
 
 namespace MAC_LabWork_5_1
 {
