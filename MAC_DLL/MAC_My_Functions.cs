@@ -8,6 +8,21 @@ namespace MAC_DLL
 {
     public class MAC_My_Functions
     {
+
+        public static double PL(int n, double x)
+        {
+            if (n == 0) return 1.0;
+            if (n == 1) return x;
+            double pn_1 = x, pn_2 = 1.0, pn = double.NaN, an;
+            for (int j = 2; j<=n; j++)
+            {
+                an = 1.0 - 1.0 / j;
+                pn = (1.0 + an) * x * pn_1 - an * pn_2;
+                pn_2 = pn_1; pn_1 = pn; 
+            }
+            return pn;
+        }
+
         public static double f0(double x, double a, double b, double eps)
         {
             if (x == 0) return 0.0;

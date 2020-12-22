@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3839D9FD-AF06-433E-8611-08892E60227A}</ProjectGuid>
+    <ProjectGuid>{9550A8A3-3A03-48F9-84D4-CF0A788508F4}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MAC_DLL</RootNamespace>
-    <AssemblyName>MAC_DLL</AssemblyName>
+    <RootNamespace>MAC_Graph_DLL</RootNamespace>
+    <AssemblyName>MAC_Graph_DLL</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -33,6 +33,9 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -41,28 +44,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MAC_Algebra.cs" />
-    <Compile Include="MAC_Equations.cs" />
-    <Compile Include="MAC_Interpolation.cs" />
-    <Compile Include="MAC_Matrix.cs" />
-    <Compile Include="MAC_My_Definitions\Cauchy_Point.cs" />
-    <Compile Include="MAC_My_Definitions\MyExtendedTableOfFunction.cs" />
-    <Compile Include="MAC_My_Definitions\MaTableOfData.cs" />
-    <Compile Include="MAC_My_Definitions\MyTable.cs" />
-    <Compile Include="MAC_My_Definitions\MyTableOfFunction.cs" />
-    <Compile Include="MAC_My_Definitions\Point_xf.cs" />
-    <Compile Include="MAC_My_Definitions\Root.cs" />
-    <Compile Include="MAC_My_Definitions\TypeOfInterpolation.cs" />
-    <Compile Include="MAC_My_Functions.cs" />
-    <Compile Include="MAC_Newton_Cotes.cs" />
-    <Compile Include="MAC_ODE_Order_1.cs" />
-    <Compile Include="MAC_ODE_Order_2.cs" />
-    <Compile Include="MAC_Ordinary_Differential_Equations.cs" />
-    <Compile Include="MAC_Quadrature.cs" />
-    <Compile Include="MAC_Regressions.cs" />
-    <Compile Include="MAC_Series.cs" />
-    <Compile Include="MAC_Vector.cs" />
+    <Compile Include="Class1.cs" />
+    <Compile Include="Form_with_Data.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_with_Data.Designer.cs">
+      <DependentUpon>Form_with_Data.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Form_with_Data.resx">
+      <DependentUpon>Form_with_Data.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MAC_DLL\MAC_DLL.csproj">
+      <Project>{3839d9fd-af06-433e-8611-08892e60227a}</Project>
+      <Name>MAC_DLL</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

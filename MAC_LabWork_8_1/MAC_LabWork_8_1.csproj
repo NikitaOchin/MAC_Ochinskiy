@@ -4,16 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3839D9FD-AF06-433E-8611-08892E60227A}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MAC_DLL</RootNamespace>
-    <AssemblyName>MAC_DLL</AssemblyName>
+    <ProjectGuid>{B4A6CD33-7C97-431C-B268-78E0E8C52EFB}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>MAC_LabWork_8_1</RootNamespace>
+    <AssemblyName>MAC_LabWork_8_1</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,6 +24,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -41,28 +43,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MAC_Algebra.cs" />
-    <Compile Include="MAC_Equations.cs" />
-    <Compile Include="MAC_Interpolation.cs" />
-    <Compile Include="MAC_Matrix.cs" />
-    <Compile Include="MAC_My_Definitions\Cauchy_Point.cs" />
-    <Compile Include="MAC_My_Definitions\MyExtendedTableOfFunction.cs" />
-    <Compile Include="MAC_My_Definitions\MaTableOfData.cs" />
-    <Compile Include="MAC_My_Definitions\MyTable.cs" />
-    <Compile Include="MAC_My_Definitions\MyTableOfFunction.cs" />
-    <Compile Include="MAC_My_Definitions\Point_xf.cs" />
-    <Compile Include="MAC_My_Definitions\Root.cs" />
-    <Compile Include="MAC_My_Definitions\TypeOfInterpolation.cs" />
-    <Compile Include="MAC_My_Functions.cs" />
-    <Compile Include="MAC_Newton_Cotes.cs" />
-    <Compile Include="MAC_ODE_Order_1.cs" />
-    <Compile Include="MAC_ODE_Order_2.cs" />
-    <Compile Include="MAC_Ordinary_Differential_Equations.cs" />
-    <Compile Include="MAC_Quadrature.cs" />
-    <Compile Include="MAC_Regressions.cs" />
-    <Compile Include="MAC_Series.cs" />
-    <Compile Include="MAC_Vector.cs" />
+    <Compile Include="Main_LW_8_1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MAC_DLL\MAC_DLL.csproj">
+      <Project>{3839d9fd-af06-433e-8611-08892e60227a}</Project>
+      <Name>MAC_DLL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Taylor_Method.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
